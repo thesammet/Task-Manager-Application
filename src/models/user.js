@@ -8,7 +8,6 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        //trim is delete the whole spaces
         trim: true
     },
     age: {
@@ -69,7 +68,6 @@ userSchema.methods.toJSON = function () {
     const user = this
     const userObject = user.toObject()
 
-    //delete some fields
     delete userObject.password
     delete userObject.tokens
     delete userObject.__v

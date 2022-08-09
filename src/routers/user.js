@@ -18,7 +18,6 @@ router.post('/users', async (req, res) => {
 
 router.post('/users/login', async (req, res) => {
     try {
-        //await is important because this proccess is asyncronous
         const user = await User.findByCredentials(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
         res.send({ user: user, token })
@@ -34,11 +33,8 @@ router.post('/users/logout', auth, async (req, res) => {
         })
 
         await req.user.save()
-
         res.send()
-
     } catch (error) {
-        console.log("adsa")
         res.status(500).send(error)
     }
 })

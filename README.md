@@ -2,5 +2,4 @@
 
 Backend: Node.js -
 A backend project, I develope to learn Node.js -
-Live url: https://be-task-manager.herokuapp.com/ -
-AWS Cloud
+Accessible on local URL: localhost:3000/
